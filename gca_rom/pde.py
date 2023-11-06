@@ -95,4 +95,25 @@ def problem(argument):
             for i in range(len(mu_range)):
                 mu_space.append(np.linspace(mu_range[i][0], mu_range[i][1], n_pts[i]))
             n_param = 7
+        case 11:
+            problem_name = "maxwell"
+            variable = 'Uz'
+            mu1 = np.linspace(1., 20., 10)
+            mu2 = np.linspace(0., 1., 10)
+            mu_space = [mu1, mu2]
+            n_param = 2
+        case 12:
+            problem_name = "maxwell"
+            variable = 'Ux'
+            mu1 = np.linspace(1., 20., 10)
+            mu2 = np.linspace(0., 1., 10)
+            mu_space = [mu1, mu2]
+            n_param = 2
+        case 13:
+            problem_name = "maxwell"
+            variable = 'Uy'
+            mu1 = np.linspace(1., 20., 10)
+            mu2 = np.linspace(0., 1., 10)
+            mu_space = [mu1, mu2]
+            n_param = 2
     return problem_name, variable, mu_space, n_param
