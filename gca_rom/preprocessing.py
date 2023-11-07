@@ -56,7 +56,7 @@ def graphs_dataset(dataset, HyperParams):
     test_snapshots.sort()
 
     ## FEATURE SCALING
-    var_test = dataset.U[:, test_snapshots]  # to modify: we have three columns for each snapshot
+    var_test = dataset.U[:, (test_snapshots*3-2):(test_snapshots+2)]  # to modify: we have three columns for each snapshot
 
     scaling_type = HyperParams.scaling_type
     scaler_all, VAR_all = scaling.tensor_scaling(var, scaling_type, HyperParams.scaler_number)
