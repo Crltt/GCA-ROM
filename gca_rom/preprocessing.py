@@ -56,7 +56,7 @@ def graphs_dataset(dataset, HyperParams):
     test_snapshots.sort()
 
     ## FEATURE SCALING
-    var_test = dataset.U[:, test_snapshots]
+    var_test = dataset.U[:, test_snapshots]  # to modify: we have three columns for each snapshot
 
     scaling_type = HyperParams.scaling_type
     scaler_all, VAR_all = scaling.tensor_scaling(var, scaling_type, HyperParams.scaler_number)
@@ -66,7 +66,7 @@ def graphs_dataset(dataset, HyperParams):
     edge_index = torch.t(dataset.E) - 1
     for graph in range(num_graphs):
         if dataset.dim == 2:
-            pos = torch.cat((xx[:, graph].unsqueeze(1), yy[:, graph].unsqueeze(1)), 1)
+            pos = torch.cat((xx[:, graph].unsqueeze(1), yy[:, graph].unsqueeze(1)), 1) # already ok because it s just creating the edge attributes
         elif dataset.dim == 3:
             pos = torch.cat((xx[:, graph].unsqueeze(1), yy[:, graph].unsqueeze(1), zz[:, graph].unsqueeze(1)), 1)
         ei = torch.index_select(pos, 0, edge_index[0, :])
