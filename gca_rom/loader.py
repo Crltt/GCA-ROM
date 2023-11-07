@@ -23,6 +23,9 @@ class LoadDataset(Dataset):
         The tensor representation of the 'T' key from the data_mat, casted to int. Adjacency Matrix
     E : torch.Tensor
         The tensor representation of the 'E' key from the data_mat, casted to int. Connection Matrix
+    X : torch.Tensor
+    
+    Y : torch.Teensor
 
     __init__(self, root_dir, variable)
         Initializes the LoadDataset object by loading the data from the .mat file at the root_dir location and converting the specified variable to a tensor representation.
@@ -34,6 +37,8 @@ class LoadDataset(Dataset):
         self.U = torch.tensor(self.data_mat[variable])
         self.xx = torch.tensor(self.data_mat['xx'])
         self.yy = torch.tensor(self.data_mat['yy'])
+        self.X = torch.tensor(self.data_mat['X'])    # added nodes associated to elements
+        self.Y = torch.tensor(self.data_mat['Y'])
         self.dim = 3
         try:
             self.zz = torch.tensor(self.data_mat['zz'])
