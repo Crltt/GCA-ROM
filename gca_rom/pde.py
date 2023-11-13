@@ -100,7 +100,7 @@ def problem(argument):
             variable = 'TEz'
             mu1 = np.linspace(0., 1., 326)
             mu2 = np.linspace(1., 1.)
-            mu_space = [float(mu1), float(mu2)]
+            mu_space = [mu1 , float(mu2)]
             n_param = 2
         case 12:
             problem_name = "maxwell"
