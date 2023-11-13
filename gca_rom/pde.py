@@ -99,8 +99,9 @@ def problem(argument):
             problem_name = "maxwell"
             variable = 'TEz'
             mu1 = np.linspace(0., 1., 326)
-            mu_space = mu1
-            n_param = 1
+            mu2 = 1
+            mu_space = [mu1, mu2]
+            n_param = 2
         case 12:
             problem_name = "maxwell"
             variable = 'THx'
