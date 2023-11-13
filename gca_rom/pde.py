@@ -97,23 +97,20 @@ def problem(argument):
             n_param = 7
         case 11:
             problem_name = "maxwell"
-            variable = 'Uz'
-            mu1 = np.linspace(1., 20., 10)
-            mu2 = np.linspace(0., 1., 10)
-            mu_space = [mu1, mu2]
-            n_param = 2
+            variable = 'TEz'
+            mu1 = np.linspace(0., 1., 326)
+            mu_space = mu1
+            n_param = 1
         case 12:
             problem_name = "maxwell"
-            variable = 'Ux'
-            mu1 = np.linspace(1., 20., 10)
-            mu2 = np.linspace(0., 1., 10)
-            mu_space = [mu1, mu2]
-            n_param = 2
+            variable = 'THx'
+            mu1 = np.linspace(0., 1., 326)
+            mu_space = mu1
+            n_param = 1
         case 13:
             problem_name = "maxwell"
-            variable = 'Uy'
-            mu1 = np.linspace(1., 20., 10)
-            mu2 = np.linspace(0., 1., 10)
-            mu_space = [mu1, mu2]
-            n_param = 2
+            variable = 'THy'
+            mu1 = np.linspace(0., 1., 326)
+            mu_space = mu1
+            n_param = 1
     return problem_name, variable, mu_space, n_param
