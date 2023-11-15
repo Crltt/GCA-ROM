@@ -34,23 +34,23 @@ def hyperparameters_selection(name, var, n):
 
     def default_values(name):
         if name == "poisson":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2, 1]
+            preset = [3, 2, 2, 2, 1, 1, 3, 2, 0]
         elif name == "advection":
-            preset = [3, 2, 2, 2, 3, 1, 3, 1, 1]
+            preset = [3, 2, 2, 2, 3, 1, 3, 1, 0]
         elif name == "graetz":
-            preset = [3, 2, 2, 2, 1, 3, 3, 1, 1]
+            preset = [3, 2, 2, 2, 1, 3, 3, 1, 0]
         elif name == "navier_stokes":
-            preset = [3, 2, 0, 2, 3, 3, 2, 2, 1]
+            preset = [3, 2, 0, 2, 3, 3, 2, 2, 0]
         elif name == "diffusion":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2, 1]
+            preset = [3, 2, 2, 2, 1, 1, 3, 2, 0]
         elif name == "poiseuille":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2, 1]
+            preset = [3, 2, 2, 2, 1, 1, 3, 2, 0]
         elif name == "elasticity":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2, 1]
+            preset = [3, 2, 2, 2, 1, 1, 3, 2, 0]
         elif name == "stokes_u":
-            preset = [3, 2, 2, 2, 1, 3, 3, 1, 1]
+            preset = [3, 2, 2, 2, 1, 3, 3, 1, 0]
         elif name == "maxwell":
-            preset = [3, 2, 2, 2, 2, 2, 3, 1, 2]
+            preset = [3, 2, 2, 2, 2, 2, 3, 1, 1]
         return preset
 
 
