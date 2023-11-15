@@ -63,7 +63,7 @@ def hyperparameters_selection(name, var, n):
     preset_options_6 = ["10", "15", "20", "25", "30"]
     preset_options_7 = ["0.01", "0.1", "1", "10", "100"]
     preset_options_8 = ["1", "2", "3", "4", "5"]
-    preset_options_9 = ["5000", "3500"]
+    preset_options_9 = ["3500", "3500"]
 
     try:
         root=tk.Tk()
