@@ -50,7 +50,7 @@ def hyperparameters_selection(name, var, n):
         elif name == "stokes_u":
             preset = [3, 2, 2, 2, 1, 3, 3, 1]
         elif name == "maxwell":
-            preset = [3, 2, 2, 2, 2, 2, 3, 1]
+            preset = [3, 2, 2, 2, 2, 2, 3, 2]
         return preset
 
 
@@ -63,7 +63,7 @@ def hyperparameters_selection(name, var, n):
     preset_options_6 = ["10", "15", "20", "25", "30"]
     preset_options_7 = ["0.01", "0.1", "1", "10", "100"]
     preset_options_8 = ["1", "2", "3", "4", "5"]
-    preset_options_9 = ["5000"]
+    preset_options_9 = ["5000", "3500"]
 
     try:
         root=tk.Tk()
