@@ -101,7 +101,7 @@ def hyperparameters_selection(name, var, n):
         # BOLEAN BUTTON
         row = 2
         flag1 = tk.BooleanVar()
-        flag1.set(False) #set check state
+        flag1.set(True) #set check state
         chk1 = tk.Checkbutton(root, text='Skip connection', var=flag1)
         chk1.grid(row=row, column=5, columnspan=3)
 
