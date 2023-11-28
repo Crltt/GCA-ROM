@@ -40,7 +40,7 @@ def graphs_dataset(dataset, HyperParams):
 
     # PROCESSING DATASET
     num_nodes = int(dof)
-    num_graphs = int(var.shape[1])/num_nodes
+    num_graphs = int(var.shape[1]/num_nodes)
 
     print("Number of nodes processed: ", num_nodes)
     print("Number of graphs processed: ", num_graphs)
