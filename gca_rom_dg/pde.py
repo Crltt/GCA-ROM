@@ -113,4 +113,10 @@ def problem(argument):
             mu1 = np.linspace(1, 336,336)
             mu_space = [mu1]
             n_param = 1
+        case 14:
+            problem_name = "maxwelldg"
+            variable = 'TEz'
+            mu1 = np.linspace(1, 336,336)
+            mu_space = [mu1]
+            n_param = 1
     return problem_name, variable, mu_space, n_param
