@@ -34,7 +34,7 @@ class LoadDataset(Dataset):
         self.U = torch.tensor(self.data_mat[variable])
         self.xx = torch.tensor(self.data_mat['xx'])
         self.yy = torch.tensor(self.data_mat['yy'])
-        sel.dof = torch.tensor(self.data_mat['dof'])
+        self.dof = torch.tensor(self.data_mat['dof'])
         self.dim = 3
         try:
             self.zz = torch.tensor(self.data_mat['zz'])
