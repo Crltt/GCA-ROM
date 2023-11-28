@@ -32,14 +32,15 @@ def graphs_dataset(dataset, HyperParams):
     xx = dataset.xx
     yy = dataset.yy
     xyz = [xx, yy]
+    dof = dataset.dof
     if dataset.dim == 3:
        zz = dataset.zz
        xyz.append(zz)
     var = dataset.U
 
     # PROCESSING DATASET
-    num_nodes = var.shape[0]
-    num_graphs = int(var.shape[1]) 
+    num_nodes = dof
+    num_graphs = int(var.shape[1]) /dof
 
     print("Number of nodes processed: ", num_nodes)
     print("Number of graphs processed: ", num_graphs)
