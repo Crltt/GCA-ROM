@@ -39,8 +39,8 @@ def graphs_dataset(dataset, HyperParams):
     var = dataset.U
 
     # PROCESSING DATASET
-    num_nodes = dof
-    num_graphs = int(var.shape[1]) /dof
+    num_nodes = dof[0]
+    num_graphs = int(var.shape[1])/num_nodes
 
     print("Number of nodes processed: ", num_nodes)
     print("Number of graphs processed: ", num_graphs)
