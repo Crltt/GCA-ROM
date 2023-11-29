@@ -1,5 +1,5 @@
 import numpy as np
-from gca_rom import scaling
+from gca_rom_dg import scaling
 
 
 def save_error(error, norm, HyperParams, vars):
