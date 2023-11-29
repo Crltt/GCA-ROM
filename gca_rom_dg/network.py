@@ -50,7 +50,7 @@ class HyperParams:
         self.seed = 10
         self.tolerance = 1e-6
         self.learning_rate = 0.001
-        self.hidden_channels = [[1]*self.in_channels, [1]*self.in_channels, [1]*self.in_channels] # modify
+        self.hidden_channels = [1]*self.in_channels
         self.act = torch.tanh
         self.layer_vec=[argv[11], self.nodes, self.nodes, self.nodes, self.nodes, self.bottleneck_dim]
         self.net_run = '_' + self.scaler_name
