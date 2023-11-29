@@ -2,7 +2,8 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 #from torch_geometric.nn import GMMConv
-from conv.py import GMM
+from gca_rom_dg import con
+from conv import GMM
 
 class Encoder(torch.nn.Module):
     """
