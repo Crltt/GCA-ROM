@@ -83,9 +83,9 @@ def graphs_dataset(dataset, HyperParams):
         M = int(3) # to adjust
         node_features = np.zeros((N,3))
         t = 0
-        for i in range(N-2):
+        for i in range(N/3-1):
             for j in range(M-1):
-                node_features[i,j] = node_features_list[i+j+t]
+                node_features[i,j] = node_features_list[i+j+t-1]
             t = t+2    
             print(node_features[i,:])
         dataset_graph = Data(x=node_features, edge_index=edge_index, edge_attr=edge_attr, pos=pos)
