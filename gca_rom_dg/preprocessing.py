@@ -81,7 +81,7 @@ def graphs_dataset(dataset, HyperParams):
         node_features_list = VAR_all[graph, :]   # modified to read DG dataset
         N = node_features_list.shape[0]
         M = int(3) # to adjust
-        node_features = np.zeros((N-1,3))
+        node_features = np.zeros((N,3))
         t = 0
         for i in range(int(N/3)-1):
             for j in range(M):
