@@ -2,7 +2,7 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 #from torch_geometric.nn import GMMConv
-from conv.py import GMMConv
+from conv.py import GMM
 
 class Encoder(torch.nn.Module):
     """
@@ -39,7 +39,7 @@ class Encoder(torch.nn.Module):
 
         self.down_convs = torch.nn.ModuleList()
         for i in range(self.depth-1):
-            self.down_convs.append(GMMConv(self.hidden_channels[i], self.hidden_channels[i+1], dim=1, kernel_size=5)) 
+            self.down_convs.append(GMM(self.hidden_channels[i], self.hidden_channels[i+1], dim=1, kernel_size=5)) 
 
         self.fc_in1 = nn.Linear(self.input_size*self.hidden_channels[-1], self.ffn)
         self.fc_in2 = nn.Linear(self.ffn, self.bottleneck)
@@ -118,7 +118,7 @@ class Decoder(torch.nn.Module):
 
         self.up_convs = torch.nn.ModuleList()
         for i in range(self.depth-1):
-            self.up_convs.append(GMMConv(self.hidden_channels[self.depth-1-i], self.hidden_channels[self.depth-i-2], dim=1, kernel_size=5)) 
+            self.up_convs.append(GMM(self.hidden_channels[self.depth-1-i], self.hidden_channels[self.depth-i-2], dim=1, kernel_size=5)) 
         
         self.reset_parameters()
 
