@@ -78,7 +78,14 @@ def graphs_dataset(dataset, HyperParams):
             edge_attr = torch.sqrt(torch.pow(edge_diff[:, 0], 2) + torch.pow(edge_diff[:, 1], 2))
         elif dataset.dim == 3:
             edge_attr = torch.sqrt(torch.pow(edge_diff[:, 0], 2) + torch.pow(edge_diff[:, 1], 2) + torch.pow(edge_diff[:, 2], 2))
-        node_features = VAR_all[graph, :]
+        node_features_list = VAR_all[graph, :]   # modified to read DG dataset
+        N = node_features_list.shape[0]
+        M = node_features_list.shape[1]
+        t = 0
+        for i in range(N):
+            for j in range(M):
+                node_features[i,j] = node_features_list[i+j+t]
+            t = t+2    
         dataset_graph = Data(x=node_features, edge_index=edge_index, edge_attr=edge_attr, pos=pos)
         graphs.append(dataset_graph)
 
