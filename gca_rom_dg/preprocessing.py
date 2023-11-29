@@ -84,7 +84,7 @@ def graphs_dataset(dataset, HyperParams):
         node_features = np.zeros((N,3))
         t = 0
         for i in range(int(N/3)-1):
-            for j in range(M-1):
+            for j in range(M):
                 l = i+j+t-1
                 node_features[i,j] = node_features_list[l]
                 print(l)
