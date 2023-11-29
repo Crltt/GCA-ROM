@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from gca_rom import scaling
+from gca_rom_dg import scaling
 from collections import defaultdict
 import matplotlib.gridspec as gridspec
 import matplotlib.cm as cm
