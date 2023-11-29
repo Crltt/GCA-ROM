@@ -135,7 +135,7 @@ class GMM(MessagePassing):
 
         # propagate_type: (x: OptPairTensor, edge_attr: OptTensor)
         if not self.separate_gaussians:
-            out: OptPairTensor = (torch.matmul(x[0], [self.g, self.g, self.g]), x[1])
+            out: OptPairTensor = (torch.matmul(x[0], torch.tensor([self.g, self.g, self.g]), x[1])
             out = self.propagate(edge_index, x=out, edge_attr=edge_attr,
                                  size=size)
         else:
