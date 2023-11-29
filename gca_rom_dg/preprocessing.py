@@ -89,7 +89,7 @@ def graphs_dataset(dataset, HyperParams):
                 node_features[i,j] = node_features_list[l]
                 print(l)
                 print(node_features[i,j])
-            t = t+2    
+            t = t+1    
         print(node_features[1,:])    
         dataset_graph = Data(x=node_features, edge_index=edge_index, edge_attr=edge_attr, pos=pos)
         graphs.append(dataset_graph)
