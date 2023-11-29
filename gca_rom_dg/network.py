@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from gca_rom import gca, scaling
+from gca_rom_dg import gca, scaling
 
 
 class HyperParams:
