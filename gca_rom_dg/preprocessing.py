@@ -2,7 +2,7 @@ import numpy as np
 import torch
 from torch_geometric.data import Data
 from torch_geometric.loader import DataLoader
-from gca_rom import scaling
+from gca_rom_dg import scaling
 
 
 def graphs_dataset(dataset, HyperParams):
