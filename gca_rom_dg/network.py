@@ -44,7 +44,8 @@ class HyperParams:
         self.sparse_method = 'L1_mean'
         self.ffn = int(argv[6])
         self.nodes = int(argv[7])
-        self.input_size = tuple([3]*self.nodes) # added
+        self.dofs = int(3)
+        self.input_size = tuple([self.dofs]*self.nodes) # added
         self.bottleneck_dim = int(argv[8])
         self.lambda_map = float(argv[9])
         self.in_channels = int(argv[10])
