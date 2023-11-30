@@ -44,6 +44,7 @@ class HyperParams:
         self.sparse_method = 'L1_mean'
         self.ffn = int(argv[6])
         self.nodes = int(argv[7])
+        self.input_size = (self.nodes,3) # added
         self.bottleneck_dim = int(argv[8])
         self.lambda_map = float(argv[9])
         self.in_channels = int(argv[10])
@@ -106,8 +107,8 @@ class Net(torch.nn.Module):
 
     def __init__(self, HyperParams):
         super().__init__()
-        self.encoder = gca.Encoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim, HyperParams.num_nodes, ffn=HyperParams.ffn, skip=HyperParams.skip)
-        self.decoder = gca.Decoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim, HyperParams.num_nodes, ffn=HyperParams.ffn, skip=HyperParams.skip)
+        self.encoder = gca.Encoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim, HyperParams.input_size, ffn=HyperParams.ffn, skip=HyperParams.skip)
+        self.decoder = gca.Decoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim, HyperParams.input_size, ffn=HyperParams.ffn, skip=HyperParams.skip)
 
         self.act_map = HyperParams.act
         self.layer_vec = HyperParams.layer_vec
