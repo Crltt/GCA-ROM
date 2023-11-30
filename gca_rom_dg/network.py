@@ -47,7 +47,7 @@ class HyperParams:
         self.input_size = tuple([int(self.nodes), int(3)]) # added
         self.bottleneck_dim = int(argv[8])
         self.lambda_map = float(argv[9])
-        self.in_channels = tuple(int(argv[10])) # modidied
+        self.in_channels = int(argv[10])
         self.seed = 10
         self.tolerance = 1e-6
         self.learning_rate = 0.001
