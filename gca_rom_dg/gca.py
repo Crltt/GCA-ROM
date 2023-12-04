@@ -38,6 +38,7 @@ class Encoder(torch.nn.Module):
 
         self.down_convs = torch.nn.ModuleList()
         for i in range(self.depth-1):
+            print('hidden_channels: ',hidden_channels[i])
             self.down_convs.append(GMMConv(self.hidden_channels[i], self.hidden_channels[i+1], dim=2, kernel_size=5, aggr='mean')) 
 
         print('input_size: ', self.input_size)
