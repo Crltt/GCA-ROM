@@ -45,7 +45,7 @@ class HyperParams:
         self.ffn = int(argv[6])
         self.nodes = int(argv[7])
         self.dofs = int(3)
-        self.input_size = [self.nodes, self.nodes, self.nodes] # added
+        self.input_size = tuple([self.nodes, self.nodes, self.nodes]) # added
         self.bottleneck_dim = int(argv[8])
         self.lambda_map = float(argv[9])
         self.in_channels = int(argv[10])
