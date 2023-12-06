@@ -34,23 +34,23 @@ def hyperparameters_selection(name, var, n):
 
     def default_values(name):
         if name == "poisson":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2, 0]
+            preset = [3, 2, 2, 2, 1, 1, 3, 2]
         elif name == "advection":
-            preset = [3, 2, 2, 2, 3, 1, 3, 1, 0]
+            preset = [3, 2, 2, 2, 3, 1, 3, 1]
         elif name == "graetz":
-            preset = [3, 2, 2, 2, 1, 3, 3, 1, 0]
+            preset = [3, 2, 2, 2, 1, 3, 3, 1]
         elif name == "navier_stokes":
-            preset = [3, 2, 0, 2, 3, 3, 2, 2, 0]
+            preset = [3, 2, 0, 2, 3, 3, 2, 2]
         elif name == "diffusion":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2, 0]
+            preset = [3, 2, 2, 2, 1, 1, 3, 2]
         elif name == "poiseuille":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2, 0]
+            preset = [3, 2, 2, 2, 1, 1, 3, 2]
         elif name == "elasticity":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2, 0]
+            preset = [3, 2, 2, 2, 1, 1, 3, 2]
         elif name == "stokes_u":
-            preset = [3, 2, 2, 2, 1, 3, 3, 1, 0]
+            preset = [3, 2, 2, 2, 1, 3, 3, 1]
         elif name == "maxwell":
-            preset = [3, 2, 3, 2, 1, 1, 1, 1, 1]
+            preset = [3, 2, 2, 2, 1, 1, 3, 2]
         return preset
 
 
@@ -63,7 +63,7 @@ def hyperparameters_selection(name, var, n):
     preset_options_6 = ["10", "15", "20", "25", "30"]
     preset_options_7 = ["0.01", "0.1", "1", "10", "100"]
     preset_options_8 = ["1", "2", "3", "4", "5"]
-    preset_options_9 = ["5000", "3500"]
+    preset_options_9 = ["5000"]
 
     try:
         root=tk.Tk()
