@@ -50,7 +50,7 @@ def hyperparameters_selection(name, var, n):
         elif name == "stokes_u":
             preset = [3, 2, 2, 2, 1, 3, 3, 1]
         elif name == "maxwell":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2]
+            preset = [3, 2, 3, 2, 1, 1, 3, 2]
         return preset
 
 
