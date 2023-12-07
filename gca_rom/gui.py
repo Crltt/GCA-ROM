@@ -57,7 +57,7 @@ def hyperparameters_selection(name, var, n):
     preset = default_values(name)
     preset_options_1 = ["sample", "feature", "feature-sampling", "sampling-feature"] 
     preset_options_2 = ["minmax", "robust", "standard"]
-    preset_options_3 = ["10", "20", "30", "40", "50"]
+    preset_options_3 = ["10", "20", "30", "40", "60"]
     preset_options_4 = ["50", "100", "200", "300", "400"]
     preset_options_5 = ["25", "50", "75", "100", "125"]
     preset_options_6 = ["10", "15", "20", "25", "30"]
