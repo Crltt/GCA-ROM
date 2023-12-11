@@ -36,6 +36,7 @@ class Encoder(torch.nn.Module):
         self.bottleneck = bottleneck
         self.input_size = input_size
 
+        print('input size: ',input_size)
         self.down_convs = torch.nn.ModuleList()
         for i in range(self.depth-1):
             print('hidden_channels: ',hidden_channels[i])
