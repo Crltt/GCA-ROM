@@ -50,14 +50,14 @@ def hyperparameters_selection(name, var, n):
         elif name == "stokes_u":
             preset = [3, 2, 2, 2, 1, 3, 3, 1]
         elif name == "maxwell":
-            preset = [3, 2, 4, 2, 1, 1, 0, 2]
+            preset = [3, 2, 4, 2, 1, 1, 1, 2]
         return preset
 
 
     preset = default_values(name)
     preset_options_1 = ["sample", "feature", "feature-sampling", "sampling-feature"] 
     preset_options_2 = ["minmax", "robust", "standard"]
-    preset_options_3 = ["10", "20", "30", "40", "60"]
+    preset_options_3 = ["10", "20", "30", "40", "70"]
     preset_options_4 = ["50", "100", "200", "300", "400"]
     preset_options_5 = ["25", "50", "75", "100", "125"]
     preset_options_6 = ["10", "15", "20", "25", "30"]
