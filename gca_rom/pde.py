@@ -113,4 +113,22 @@ def problem(argument):
             mu1 = np.linspace(1, 326,326)
             mu_space = [mu1]
             n_param = 1
+        case 14:
+            problem_name = "maxwellmodes"
+            variable = 'TEz'
+            mu1 = np.linspace(0, 335,336)
+            mu_space = [mu1]
+            n_param = 1
+        case 15:
+            problem_name = "maxwellmodes"
+            variable = 'THx'
+            mu1 = np.linspace(0, 335,336)
+            mu_space = [mu1]
+            n_param = 1
+        case 16:
+            problem_name = "maxwellmodes"
+            variable = 'THy'
+            mu1 = np.linspace(0, 335,336)
+            mu_space = [mu1]
+            n_param = 1
     return problem_name, variable, mu_space, n_param
