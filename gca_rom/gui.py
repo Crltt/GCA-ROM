@@ -51,6 +51,8 @@ def hyperparameters_selection(name, var, n):
             preset = [3, 2, 2, 2, 1, 3, 3, 1]
         elif name == "maxwell":
             preset = [3, 2, 2, 2, 1, 1, 1, 2]
+        elif name == "maxwellmodes":
+            preset = [3, 2, 2, 2, 1, 1, 1, 2]
         return preset
 
 
