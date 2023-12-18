@@ -108,8 +108,8 @@ class Net(torch.nn.Module):
 
     def __init__(self, HyperParams):
         super().__init__()
-        self.encoder = gca.Encoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim, [3,HyperParams.nodes], ffn=HyperParams.ffn, skip=HyperParams.skip)
-        self.decoder = gca.Decoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim,[3,HyperParams.nodes], ffn=HyperParams.ffn, skip=HyperParams.skip)
+        self.encoder = gca.Encoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim, [int(3),HyperParams.nodes], ffn=HyperParams.ffn, skip=HyperParams.skip)
+        self.decoder = gca.Decoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim,[int(3),HyperParams.nodes], ffn=HyperParams.ffn, skip=HyperParams.skip)
 
         self.act_map = HyperParams.act
         self.layer_vec = HyperParams.layer_vec
