@@ -33,25 +33,11 @@ def hyperparameters_selection(name, var, n):
         epochs = selected_option_9.get()
 
     def default_values(name):
-        if name == "poisson":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2]
-        elif name == "advection":
-            preset = [3, 2, 2, 2, 3, 1, 3, 1]
-        elif name == "graetz":
-            preset = [3, 2, 2, 2, 1, 3, 3, 1]
-        elif name == "navier_stokes":
-            preset = [3, 2, 0, 2, 3, 3, 2, 2]
-        elif name == "diffusion":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2]
-        elif name == "poiseuille":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2]
-        elif name == "elasticity":
-            preset = [3, 2, 2, 2, 1, 1, 3, 2]
-        elif name == "stokes_u":
-            preset = [3, 2, 2, 2, 1, 3, 3, 1]
-        elif name == "maxwell":
+        if name == "maxwell":
             preset = [3, 2, 2, 2, 1, 1, 1, 2]
         elif name == "maxwellmodes":
+            preset = [3, 2, 2, 2, 1, 1, 1, 2]
+        elif name == "maxwellhp":
             preset = [3, 2, 2, 2, 1, 1, 1, 2]
         return preset
 
