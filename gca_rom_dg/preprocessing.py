@@ -64,7 +64,7 @@ def graphs_dataset(dataset, HyperParams):
     scaler_test, VAR_test = scaling.tensor_scaling(var_test, scaling_type, HyperParams.scaler_number)
 
     graphs = []
-    edge_index = torch.t(dataset.E) - 1
+    edge_index = torch.t(dataset.E)
     print('edge index: ',edge_index.shape)
     for graph in range(num_graphs):
         if dataset.dim == 2:
