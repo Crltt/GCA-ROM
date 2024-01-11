@@ -64,7 +64,7 @@ def graphs_dataset(dataset, HyperParams):
     scaler_test, VAR_test = scaling.tensor_scaling(var_test, scaling_type, HyperParams.scaler_number)
 
     graphs = []
-    edge_index = torch.t(dataset.E)
+    edge_index = torch.t(dataset.E)-1
     print('edge index: ',edge_index.shape)
     for graph in range(num_graphs):
         if dataset.dim == 2:
@@ -83,9 +83,9 @@ def graphs_dataset(dataset, HyperParams):
         node_features_list = VAR_all[graph, :]   # modified to read DG dataset
         N = node_features_list.shape[0]
         M = int(3) # to adjust
-        node_features_ary = np.zeros((int(N/3)-1,3))
+        node_features_ary = np.zeros((int(N/3),3))
         t = 0
-        for i in range(int(N/3)-1):
+        for i in range(int(N/3)):
             for j in range(M):
                 l = i+j+t-1
                 node_features_ary[i,j] = node_features_list[l]
@@ -102,7 +102,7 @@ def graphs_dataset(dataset, HyperParams):
     print("Length of test dataset: ", len(test_dataset))
 
     loader = DataLoader(graphs, batch_size=1)
-    train_loader = DataLoader(train_dataset, batch_size=1, shuffle=False)
+    train_loader = DataLoader(train_dataset, batch_size=train_sims, shuffle=False)
     test_loader = DataLoader(test_dataset, batch_size=test_sims, shuffle=False)
     val_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
     
