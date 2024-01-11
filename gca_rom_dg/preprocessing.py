@@ -79,7 +79,7 @@ def graphs_dataset(dataset, HyperParams):
             edge_attr = torch.sqrt(torch.pow(edge_diff[:, 0], 2) + torch.pow(edge_diff[:, 1], 2))
         elif dataset.dim == 3:
             edge_attr = torch.sqrt(torch.pow(edge_diff[:, 0], 2) + torch.pow(edge_diff[:, 1], 2) + torch.pow(edge_diff[:, 2], 2))
-        print('edge attribute: ',edge_weight.shape)
+        print('edge attribute: ',edge_attr.shape)
         node_features_list = VAR_all[graph, :]   # modified to read DG dataset
         N = node_features_list.shape[0]
         M = int(3) # to adjust
