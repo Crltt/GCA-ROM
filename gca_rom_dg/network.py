@@ -52,8 +52,8 @@ class HyperParams:
         self.seed = 10
         self.tolerance = 1e-6
         self.learning_rate = 0.001
-        self.hidden_channels =  [1]*self.in_channels #[int(3),[1]*(self.in_channels -1)]
-        self.hidden_channels[0] = int(3)
+        self.hidden_channels =  [3]*self.in_channels 
+        #self.hidden_channels[0] = int(3)
         self.act = torch.tanh
         self.layer_vec=[argv[11], self.nodes, self.nodes, self.nodes, self.nodes, self.bottleneck_dim]
         self.net_run = '_' + self.scaler_name
@@ -109,8 +109,8 @@ class Net(torch.nn.Module):
 
     def __init__(self, HyperParams):
         super().__init__()
-        self.encoder = gca.Encoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim, (HyperParams.dofs, HyperParams.nodes), ffn=HyperParams.ffn, skip=HyperParams.skip)
-        self.decoder = gca.Decoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim, (HyperParams.dofs, HyperParams.nodes) , ffn=HyperParams.ffn, skip=HyperParams.skip)
+        self.encoder = gca.Encoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim,  HyperParams.nodes, ffn=HyperParams.ffn, skip=HyperParams.skip)
+        self.decoder = gca.Decoder(HyperParams.hidden_channels, HyperParams.bottleneck_dim,  HyperParams.nodes, ffn=HyperParams.ffn, skip=HyperParams.skip)
 
         self.act_map = HyperParams.act
         self.layer_vec = HyperParams.layer_vec
