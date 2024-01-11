@@ -102,7 +102,7 @@ def graphs_dataset(dataset, HyperParams):
     print("Length of test dataset: ", len(test_dataset))
 
     loader = DataLoader(graphs, batch_size=1)
-    train_loader = DataLoader(train_dataset, batch_size=train_sims, shuffle=False)
+    train_loader = DataLoader(train_dataset, batch_size=1, shuffle=False)
     test_loader = DataLoader(test_dataset, batch_size=test_sims, shuffle=False)
     val_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
     
