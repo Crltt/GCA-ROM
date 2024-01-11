@@ -60,7 +60,9 @@ class Encoder(torch.nn.Module):
             if self.skip:
                 x = x + data.x
             idx += 1
-
+        print('data.num_graphs: ', data.num_graphs)
+        print('self.input_size: ', self.input_size)
+        print('self.hidden_channels[-1]', self.hidden_channels[-1])
         x = x.reshape(data.num_graphs, self.input_size * self.hidden_channels[-1])
         x = self.act(self.fc_in1(x))
         x = self.fc_in2(x)
