@@ -43,6 +43,7 @@ class LoadDataset(Dataset):
             KeyError
         self.T = torch.tensor(self.data_mat['T'].astype(int))
         self.E = torch.tensor(self.data_mat['E'].astype(int))
+        print('self.E', self.E.shape)
 
     def len(self):
         pass
