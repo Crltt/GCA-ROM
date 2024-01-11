@@ -65,6 +65,7 @@ def graphs_dataset(dataset, HyperParams):
 
     graphs = []
     edge_index = torch.t(dataset.E) - 1
+    print('edge index: ',edge_index.shape)
     for graph in range(num_graphs):
         if dataset.dim == 2:
             # pos = torch.cat((xx[:, graph].unsqueeze(1), yy[:, graph].unsqueeze(1)), 1) 
@@ -78,6 +79,7 @@ def graphs_dataset(dataset, HyperParams):
             edge_attr = torch.sqrt(torch.pow(edge_diff[:, 0], 2) + torch.pow(edge_diff[:, 1], 2))
         elif dataset.dim == 3:
             edge_attr = torch.sqrt(torch.pow(edge_diff[:, 0], 2) + torch.pow(edge_diff[:, 1], 2) + torch.pow(edge_diff[:, 2], 2))
+        print('edge attribute: ',edge_weight.shape)
         node_features_list = VAR_all[graph, :]   # modified to read DG dataset
         N = node_features_list.shape[0]
         M = int(3) # to adjust
