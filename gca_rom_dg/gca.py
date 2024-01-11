@@ -53,6 +53,8 @@ class Encoder(torch.nn.Module):
         edge_index = data.edge_index
         x = data.x
         idx = 0
+        print('edge attribute: ',edge_weight)
+        print('edge index: ',index)
         for layer in self.down_convs:
             x = self.act(layer(x, edge_index, edge_weight.unsqueeze(1)))
             if self.skip:
