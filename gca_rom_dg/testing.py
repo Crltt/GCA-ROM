@@ -23,7 +23,7 @@ def evaluate(VAR, model, loader, params, HyperParams, test):
     latents_gca: np.array, latent representations obtained using the AE encoder
     """
 
-    results = torch.zeros(VAR.shape[0], VAR.shape[1], 1)
+    results = torch.zeros(VAR.shape[0], int(VAR.shape[1]/3), 3)
     latents_map = torch.zeros(VAR.shape[0], HyperParams.bottleneck_dim)
     latents_gca = torch.zeros(VAR.shape[0], HyperParams.bottleneck_dim)
     index = 0
@@ -36,7 +36,7 @@ def evaluate(VAR, model, loader, params, HyperParams, test):
             latents_gca[index, :] = z_net
             lat_err = np.linalg.norm(z_net - z_map)/np.linalg.norm(z_net)
             latents_error.append(lat_err)
-            results[index, :, :] = model.solo_decoder(z_map, data.reshape( VAR.shape[1]*3,1))
+            results[index, :, :] = model.solo_decoder(z_map, data)
             index += 1
         np.savetxt(HyperParams.net_dir+'latents'+HyperParams.net_run+'.csv', latents_map.detach(), delimiter =',')
         latents_error = np.array(latents_error)

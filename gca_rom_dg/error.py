@@ -62,10 +62,12 @@ def compute_error(res, VAR, scaler, HyperParams):
     error_abs_list = list()
     norm_z_list = list()
     Z = scaling.inverse_scaling(VAR, scaler, HyperParams.scaling_type)
-    Z_net = scaling.inverse_scaling(res, scaler, HyperParams.scaling_type)
+    Z_net = scaling.inverse_scaling(res.reshape(VAR.shape[0],VAR.shape[1],1), scaler, HyperParams.scaling_type)
     for snap in range(VAR.shape[0]):
-        error_abs = np.linalg.norm(abs(Z[:, snap] - Z_net[:, snap]))
-        norm_z = np.linalg.norm(Z[:, snap], 2)
+        #error_abs = np.linalg.norm(abs(Z[:, snap] - Z_net[:, snap]))
+        #norm_z = np.linalg.norm(Z[:, snap], 2)
+        error_abs = np.linalg.norm(abs(VAR[snap,:,:] - res.reshape(VAR.shape[0],VAR.shape[1],1)[snap,:,:]))
+        norm_z = np.linalg.norm(VAR[snap,:,:], 2)
         error_abs_list.append(error_abs)
         norm_z_list.append(norm_z)
     return error_abs_list, norm_z_list

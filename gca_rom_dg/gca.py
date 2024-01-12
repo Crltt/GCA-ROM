@@ -53,16 +53,11 @@ class Encoder(torch.nn.Module):
         edge_index = data.edge_index
         x = data.x
         idx = 0
-        print('edge attribute: ',edge_weight.shape)
-        print('edge index: ',edge_index.shape)
         for layer in self.down_convs:
             x = self.act(layer(x, edge_index, edge_weight.unsqueeze(1)))
             if self.skip:
                 x = x + data.x
             idx += 1
-        print('data.num_graphs: ', data.num_graphs)
-        print('self.input_size: ', self.input_size)
-        print('self.hidden_channels[-1]', self.hidden_channels[-1])
         x = x.reshape(data.num_graphs, self.input_size * self.hidden_channels[-1])
         x = self.act(self.fc_in1(x))
         x = self.fc_in2(x)
