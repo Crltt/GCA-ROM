@@ -42,8 +42,7 @@ def graphs_dataset(dataset, HyperParams):
     num_nodes = int(var.shape[0]/3)
     num_graphs = int(var.shape[1]) 
 
-    print("Number of nodes processed: ", num_nodes)
-    print("Number of graphs processed: ", num_graphs)
+
     total_sims = int(num_graphs)
     rate = HyperParams.rate/100
     train_sims = int(rate * total_sims)
