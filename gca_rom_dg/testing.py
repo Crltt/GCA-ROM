@@ -36,7 +36,7 @@ def evaluate(VAR, model, loader, params, HyperParams, test):
             latents_gca[index, :] = z_net
             lat_err = np.linalg.norm(z_net - z_map)/np.linalg.norm(z_net)
             latents_error.append(lat_err)
-            results[index, :, :] = model.solo_decoder(z_map, data)
+            results[index, :, :] = model.solo_decoder(z_map, data.reshape( VAR.shape[1]*3,1))
             index += 1
         np.savetxt(HyperParams.net_dir+'latents'+HyperParams.net_run+'.csv', latents_map.detach(), delimiter =',')
         latents_error = np.array(latents_error)
