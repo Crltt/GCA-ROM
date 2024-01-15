@@ -39,11 +39,8 @@ class Encoder(torch.nn.Module):
         print('input size: ',input_size)
         self.down_convs = torch.nn.ModuleList()
         for i in range(self.depth-1):
-            print('hidden_channels: ',hidden_channels[i])
             self.down_convs.append(GMMConv(self.hidden_channels[i], self.hidden_channels[i+1], dim=1, kernel_size=3, aggr='mean')) 
 
-        print('input_size: ', self.input_size)
-        print('ffn: ', self.ffn)
         self.fc_in1 = nn.Linear(self.input_size*self.hidden_channels[-1], self.ffn)
         self.fc_in2 = nn.Linear(self.ffn, self.bottleneck)
         self.reset_parameters()
