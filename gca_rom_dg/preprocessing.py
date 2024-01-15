@@ -64,7 +64,6 @@ def graphs_dataset(dataset, HyperParams):
 
     graphs = []
     edge_index = torch.t(dataset.E)-1
-    print('edge index: ',edge_index.shape)
     for graph in range(num_graphs):
         if dataset.dim == 2:
             # pos = torch.cat((xx[:, graph].unsqueeze(1), yy[:, graph].unsqueeze(1)), 1) 
