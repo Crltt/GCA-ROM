@@ -89,7 +89,8 @@ def graphs_dataset(dataset, HyperParams):
                 l = i+j+t-1
                 node_features_ary[i,j] = node_features_list[l]
             t = t+1 
-        node_features = torch.tensor(node_features_ary)    
+        node_features = torch.tensor(node_features_ary) 
+        node_features = node_features_list.reshape(int(N/3),3)
         dataset_graph = Data(x=node_features, edge_index=edge_index, edge_attr=edge_attr, pos=pos)
         graphs.append(dataset_graph)
 
