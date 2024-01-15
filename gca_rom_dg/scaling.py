@@ -13,6 +13,9 @@ def scaler_functions(k):
         case 3:
             sc_fun = preprocessing.StandardScaler()
             sc_name = "standard"
+        case 4:
+            sc_fun = preprocessing.IdentityScaler()
+            sc_name = "identity"
     return sc_fun, sc_name
 
 
