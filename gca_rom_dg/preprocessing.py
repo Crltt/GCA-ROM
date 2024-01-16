@@ -40,6 +40,7 @@ def graphs_dataset(dataset, HyperParams):
 
     # PROCESSING DATASET
     num_nodes = int(var.shape[0]/3)
+    #num_nodes = int(var.shape[0]/int(dof))
     num_graphs = int(var.shape[1]) 
 
 
@@ -79,8 +80,10 @@ def graphs_dataset(dataset, HyperParams):
             edge_attr = torch.sqrt(torch.pow(edge_diff[:, 0], 2) + torch.pow(edge_diff[:, 1], 2) + torch.pow(edge_diff[:, 2], 2))
         node_features_list = VAR_all[graph, :]  
         N = node_features_list.shape[0]
-        M = int(3) # to adjust
+        M = int(3) 
+        #M = int(dof) # to adjust
         node_features = node_features_list.reshape(int(N/3),3)
+        #node_features = node_features_list.reshape(int(N/int(dof)),int(dof))
         dataset_graph = Data(x=node_features, edge_index=edge_index, edge_attr=edge_attr, pos=pos)
         graphs.append(dataset_graph)
 
