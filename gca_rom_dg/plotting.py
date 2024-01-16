@@ -139,7 +139,7 @@ def plot_fields(SNAP, results, scaler_all, HyperParams, dataset, xyz, params):
         cmap = cm.get_cmap(name='jet', lut=None)
         gs1 = gridspec.GridSpec(1, 1)
         ax = plt.subplot(gs1[0, 0])
-        cs = ax.tricontourf(xx[:, SNAP], yy[:, SNAP], triang, z_net, 100, cmap=cmap)
+        cs = ax.tripcolor(xx[:, SNAP], yy[:, SNAP], z_net, triang, shading='flat', cmap=cmap)
         divider = make_axes_locatable(ax)
         cax = divider.append_axes("right", size="5%", pad=0.1)
         cbar = plt.colorbar(cs, cax=cax)
@@ -181,12 +181,14 @@ def plot_error_fields(SNAP, results, VAR_all, scaler_all, HyperParams, dataset, 
     xyz: list of arrays of shape (num_samples, num_features), containing the x, y and z-coordinates of the domain.
     params: np.array, model parameters
     """
-
+  
+    VAR = VAR_all.reshape(336,146,3)
     fig = plt.figure()
-    Z = scaling.inverse_scaling(VAR_all, scaler_all, HyperParams.scaling_type)
+    Z = scaling.inverse_scaling(VAR, scaler_all, HyperParams.scaling_type)
     Z_net = scaling.inverse_scaling(results, scaler_all, HyperParams.scaling_type)
     z = Z[:, SNAP]
     z_net = Z_net[:, SNAP]
+
     error = abs(z - z_net)/np.linalg.norm(z, 2)
     xx = xyz[0]
     yy = xyz[1]
@@ -195,7 +197,7 @@ def plot_error_fields(SNAP, results, VAR_all, scaler_all, HyperParams, dataset, 
         cmap = cm.get_cmap(name='jet', lut=None) 
         gs1 = gridspec.GridSpec(1, 1)
         ax = plt.subplot(gs1[0, 0])   
-        cs = ax.tricontourf(xx[:, SNAP], yy[:, SNAP], triang, error, 100, cmap=cmap)
+        cs = ax.tripcolor(xx[:, SNAP], yy[:, SNAP], error, triang, shading='flat', cmap=cmap)
         divider = make_axes_locatable(ax)
         cax = divider.append_axes("right", size="5%", pad=0.1)
         cbar = plt.colorbar(cs, cax=cax)
