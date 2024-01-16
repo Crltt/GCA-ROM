@@ -182,8 +182,8 @@ def plot_error_fields(SNAP, results, VAR_all, scaler_all, HyperParams, dataset, 
     params: np.array, model parameters
     """
     dof = int(dataset.dof)
-    VAR = VAR_all.reshape(336,146,3)
-    #VAR = VAR_all.reshape(VAR_all.shape[0],VAR_all.shape[1]/dof,dof)
+    #VAR = VAR_all.reshape(336,146,3)
+    VAR = VAR_all.reshape(VAR_all.shape[0],VAR_all.shape[1]/dof,dof)
     fig = plt.figure()
     Z = scaling.inverse_scaling(VAR, scaler_all, HyperParams.scaling_type)
     Z_net = scaling.inverse_scaling(results, scaler_all, HyperParams.scaling_type)
