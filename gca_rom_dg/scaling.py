@@ -1,6 +1,6 @@
 from sklearn import preprocessing
 import torch
-
+import numpy as np
 
 def scaler_functions(k):
     match k:
