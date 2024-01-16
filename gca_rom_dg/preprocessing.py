@@ -43,6 +43,8 @@ def graphs_dataset(dataset, HyperParams):
     num_nodes = int(var.shape[0]/dof)
     num_graphs = int(var.shape[1]) 
 
+    print('num_nodes: ', num_nodes)
+    print('num_graphs: ', num_graphs)
 
     total_sims = int(num_graphs)
     rate = HyperParams.rate/100
