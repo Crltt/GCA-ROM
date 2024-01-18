@@ -140,19 +140,19 @@ def problem(argument):
         case 18:
             problem_name = "maxwelldg0125p2"
             variable = 'TEz'
-            mu1 = np.linspace(1, 335,335)
+            mu1 = np.linspace(1, 305,305)
             mu_space = [mu1]
             n_param = 1
         case 19:
             problem_name = "maxwelldg0125p2"
             variable = 'THx'
-            mu1 = np.linspace(1, 335,335)
+            mu1 = np.linspace(1, 305,305)
             mu_space = [mu1]
             n_param = 1
         case 20:
             problem_name = "maxwelldg0125p2"
             variable = 'THy'
-            mu1 = np.linspace(1, 335,335)
+            mu1 = np.linspace(1, 305,305)
             mu_space = [mu1]
             n_param = 1  
     return problem_name, variable, mu_space, n_param
