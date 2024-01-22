@@ -44,15 +44,14 @@ class HyperParams:
         self.sparse_method = 'L1_mean'
         self.ffn = int(argv[6])
         self.nodes = int(argv[7])
-        self.dofs = int(3)
         self.bottleneck_dim = int(argv[8])
         self.lambda_map = float(argv[9])
         self.in_channels = int(argv[10])
         self.seed = 10
         self.tolerance = 1e-6
         self.learning_rate = 0.001
-        self.hidden_channels =  [6]*self.in_channels  # to adjust
-        #self.hidden_channels[0] = int(3)
+        self.dof = 0
+        self.hidden_channels =  [self.dof]*self.in_channels  # to adjust
         self.act = torch.tanh
         self.layer_vec=[argv[11], self.nodes, self.nodes, self.nodes, self.nodes, self.bottleneck_dim]
         self.net_run = '_' + self.scaler_name
