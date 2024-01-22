@@ -89,7 +89,7 @@ def graphs_dataset(dataset, HyperParams):
         dataset_graph = Data(x=node_features, edge_index=edge_index, edge_attr=edge_attr, pos=pos)
         graphs.append(dataset_graph)
 
-    HyperParams.dof = dof
+    #HyperParams.dof = dof
     
     HyperParams.num_nodes = dataset_graph.num_nodes
     train_dataset = [graphs[i] for i in train_snapshots]
