@@ -48,7 +48,7 @@ def plot_latent(HyperParams, latents, latents_estimation):
     latents_estimation (tensor): tensor of estimated latent spaces
     """
 
-     plt.figure()
+    plt.figure()
     for i1 in range(HyperParams.bottleneck_dim):
         plt.plot(latents[:,i1].detach(), '--')
         plt.plot(latents_estimation[:,i1].detach(),'-')
