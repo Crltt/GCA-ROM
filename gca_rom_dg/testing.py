@@ -3,7 +3,7 @@ from tqdm import tqdm
 import numpy as np
 
 
-def evaluate(VAR, model, loader, params, HyperParams, test):
+def evaluate(VAR, model, dataset, loader, params, HyperParams, test):
     """
     This function evaluates the performance of a trained Autoencoder (AE) model.
     It encodes the input data using both the model's encoder and a mapping function,
@@ -23,7 +23,7 @@ def evaluate(VAR, model, loader, params, HyperParams, test):
     latents_gca: np.array, latent representations obtained using the AE encoder
     """
 
-    results = torch.zeros(VAR.shape[0], int(VAR.shape[1]/6), 6)
+    results = torch.zeros(VAR.shape[0], int(VAR.shape[1]/dataset.dof), dataset.dof)
     latents_map = torch.zeros(VAR.shape[0], HyperParams.bottleneck_dim)
     latents_gca = torch.zeros(VAR.shape[0], HyperParams.bottleneck_dim)
     index = 0
