@@ -1,4 +1,5 @@
 import numpy as np
+import torch
 from gca_rom_dg import scaling
 
 
