@@ -36,7 +36,7 @@ def hyperparameters_selection(name, var, n):
         if name == "maxwell":
             preset = [3, 2, 3, 2, 1, 1, 1, 1, 1]
         elif name == "maxwelldg":
-            preset = [3, 3, 3, 2, 1, 1, 1, 2, 1]
+            preset = [3, 3, 2, 2, 1, 1, 1, 2, 1]
         elif name == "maxwelldg0125":
             preset = [3, 3, 3, 2, 1, 1, 1, 2, 1]
         elif name == "maxwelldg0125p2":
