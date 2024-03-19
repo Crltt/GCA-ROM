@@ -77,4 +77,25 @@ def problem(argument):
             mu1 = np.linspace(1, 269,269)
             mu_space = [mu1]
             n_param = 1
+        case 30:
+            problem_name = "maxwelldgparamAVG"
+            variable = 'TEz'
+            mu1 = np.linspace(12*0.0082, 610*0.0082,100)
+            mu2 = np.linspace(1.25, 3.5,10)
+            mu_space = [mu1, mu2]
+            n_param = 2
+        case 31:
+            problem_name = "maxwelldgparamAVG"
+            variable = 'THx'
+            mu1 = np.linspace(12*0.0082, 610*0.0082,100)
+            mu2 = np.linspace(1.25, 3.5,10)
+            mu_space = [mu1, mu2]
+            n_param = 2
+        case 32:
+            problem_name = "maxwelldgparamAVG"
+            variable = 'THy'
+            mu1 = np.linspace(12*0.0082, 610*0.0082,100)
+            mu2 = np.linspace(1.25, 3.5,10)
+            mu_space = [mu1, mu2]
+            n_param = 2 
     return problem_name, variable, mu_space, n_param
