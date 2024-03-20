@@ -40,7 +40,7 @@ def hyperparameters_selection(name, var, n):
         elif name == "maxwellhp":
             preset = [3, 2, 2, 2, 1, 1, 1, 2]
         elif name == "maxwelldgparamAVG":
-            preset = [3, 2, 2, 2, 1, 1, 1, 2]
+            preset = [0, 0, 3, 2, 1, 1, 1, 2]
         return preset
 
 
@@ -53,7 +53,7 @@ def hyperparameters_selection(name, var, n):
     preset_options_6 = ["10", "15", "20", "25", "30"]
     preset_options_7 = ["0.01", "0.1", "1", "10", "100"]
     preset_options_8 = ["1", "2", "3", "4", "5"]
-    preset_options_9 = ["5000"]
+    preset_options_9 = ["10000"]
 
     try:
         root=tk.Tk()
