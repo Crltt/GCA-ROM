@@ -80,21 +80,21 @@ def problem(argument):
         case 30:
             problem_name = "maxwelldgparamAVG"
             variable = 'TEz'
-            mu1 = np.linspace(20*0.0082, 610*0.0082,30)
+            mu1 = np.linspace(20*0.0016, 610*0.0016,30)
             mu2 = np.linspace(1.25, 3.5,10)
             mu_space = [mu1, mu2]
             n_param = 2
         case 31:
             problem_name = "maxwelldgparamAVG"
             variable = 'THx'
-            mu1 = np.linspace(20*0.0082, 610*0.0082,30)
+            mu1 = np.linspace(20*0.0016, 610*0.0016,30)
             mu2 = np.linspace(1.25, 3.5,10)
             mu_space = [mu1, mu2]
             n_param = 2
         case 32:
             problem_name = "maxwelldgparamAVG"
             variable = 'THy'
-            mu1 = np.linspace(20*0.0082, 610*0.0082,30)
+            mu1 = np.linspace(20*0.0016, 610*0.0016,30)
             mu2 = np.linspace(1.25, 3.5,10)
             mu_space = [mu1, mu2]
             n_param = 2 
