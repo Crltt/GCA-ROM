@@ -40,7 +40,7 @@ def hyperparameters_selection(name, var, n):
         elif name == "maxwellhp":
             preset = [3, 2, 2, 2, 1, 1, 1, 2]
         elif name == "maxwelldgparamAVG":
-            preset = [0, 0, 3, 2, 2, 2, 3, 2]
+            preset = [1, 0, 4, 3, 3, 4, 3, 2]
         return preset
 
 
