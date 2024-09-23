@@ -101,7 +101,7 @@ def problem(argument):
         case 34:
             problem_name = "maxwelldgparamAVG1"
             variable = 'TEz'
-            mu1 = [1.75, 2, 2.25, 3.25, 3.5]
+            mu1 = [1.75, 2.25, 3.25, 3.5]
             mu2 = np.linspace(12*0.0016, 610*0.0016,37)
             mu_space = [mu1, mu2]
             n_param = 2
