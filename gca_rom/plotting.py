@@ -102,9 +102,9 @@ def plot_error(res, VAR_all, scaler_all, dataset, HyperParams, mu_space, params,
     train_trajectories (ndarray): The indices of the training data
     vars (str): The name of the variable being plotted
     """
-    dof = int(dataset.dof)
-    VAR = VAR_all.reshape(VAR_all.shape[0],int(VAR_all.shape[1]/dof),dof)
-    u_hf = scaling.inverse_scaling(VAR, scaler_all, HyperParams.scaling_type)
+    #dof = int(dataset.dof)
+    #VAR = VAR_all.reshape(VAR_all.shape[0],int(VAR_all.shape[1]/dof),dof)
+    u_hf = scaling.inverse_scaling(VAR_all, scaler_all, HyperParams.scaling_type)
     u_app = scaling.inverse_scaling(res, scaler_all, HyperParams.scaling_type)
     error = np.linalg.norm(u_app - u_hf, axis=0) / np.linalg.norm(u_hf, axis=0)
     mu1_range = mu_space[p1]
@@ -234,7 +234,7 @@ def plot_error_fields(SNAP, results, VAR_all, scaler_all, HyperParams, dataset, 
         cmap = cm.get_cmap(name='jet', lut=None) 
         gs1 = gridspec.GridSpec(1, 1)
         ax = plt.subplot(gs1[0, 0])   
-        cs = ax.tripcolor(xx[:, SNAP], yy[:, SNAP], error, triang, shading='flat', cmap=cmap)
+        cs = ax.tricontourf(xx[:, SNAP], yy[:, SNAP], error, triang, shading='flat', cmap=cmap)
         divider = make_axes_locatable(ax)
         cax = divider.append_axes("right", size="5%", pad=0.1)
         cbar = plt.colorbar(cs, cax=cax)
